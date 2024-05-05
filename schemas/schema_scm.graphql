@@ -1,0 +1,104 @@
+type FreightSCM {
+    id: ID
+    carrier: String!
+    orig_port_cd: String!
+    dest_port_cd: String!
+    minm_wgh_qty: Float!
+    max_wgh_qty: Float!
+    svc_cd: String!
+    minimum_cost: Float!
+    rate: Float!
+    mode_dsc: String!
+    tpt_day_cnt: Int!
+    carrier_type: String!
+}
+
+type OrderSCM {
+    id: ID
+    order_id: String!
+    order_date: String!
+    origin_port: String!
+    carrier: String!
+    tpt: Int!
+    service_level: String!
+    ship_ahead_day_count: Int!
+    ship_late_day_count: Int!
+    customer: String!
+    product_id: Int!
+    plant_code: String!
+    destination_port: String!
+    unit_quantity: Int!
+    weight: Float!
+}
+
+type PlantPortsSCM {
+    id: ID
+    plant_code: String!
+    port: String!
+}
+
+type ProdPerPlantSCM {
+    id: ID
+    plant_code: String!
+    product_id: Float!
+}
+
+type VmiCustSCM {
+    id: ID
+    plant_code: String!
+    customers: String!
+}
+
+type WhCapSCM {
+    id: ID
+    plant_id: String!
+    daily_capacity: Int!
+}
+
+type WhCostsSCM {
+    id: ID
+    plant_id: String!
+    daily_capacity: Int!
+}
+
+type FreightSCMResult {
+    success: Boolean!
+    errors: [String]
+    freights: [FreightSCM]
+}
+
+type OrderSCMResult {
+    success: Boolean!
+    errors: [String]
+    orders: [OrderSCM]
+}
+
+type PlantPortsSCMResult {
+    success: Boolean!
+    errors: [String]
+    orders: [PlantPortsSCM]
+}
+
+type ProdPerPlantSCMResult {
+    success: Boolean!
+    errors: [String]
+    orders: [ProdPerPlantSCM]
+}
+
+type VmiCustSCMResult {
+    success: Boolean!
+    errors: [String]
+    orders: [VmiCustSCM]
+}
+
+type WhCapSCMResult {
+    success: Boolean!
+    errors: [String]
+    orders: [WhCapSCM]
+}
+
+type WhCostsSCMResult {
+    success: Boolean!
+    errors: [String]
+    orders: [WhCostsSCM]
+}

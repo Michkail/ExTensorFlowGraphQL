@@ -14,7 +14,8 @@ query.set_field("todos", resolve_todos)
 mutation = ObjectType("Mutation")
 mutation.set_field("createTodo", resolve_create_todo)
 type_defs = load_schema_from_path("schemas/schema.graphql")
-schema = make_executable_schema(type_defs, query)
+type_defs_scm = load_schema_from_path("schemas/schema_scm.graphql")
+schema = make_executable_schema([type_defs, type_defs_scm], query)
 
 
 @app.route("/graphql", methods=["GET"])
