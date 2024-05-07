@@ -6,17 +6,18 @@ authors = ["Michkail <michkail@pitrlabs.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.12"
+lightgbm = "^4.3.0"
+pandas = "^2.2.2"
+plotly = "^5.22.0"
+scikit-learn = "^1.4.2"
 flask = "^3.0.3"
 flask-sqlalchemy = "^3.1.1"
-ariadne = "0.6.0"
-jupyter = "^1.0.0"
-numpy = "^1.26.4"
-pandas = "^2.2.2"
-openpyxl = "^3.1.2"
-pulp = "^2.8.0"
-psycopg2-binary = "^2.9.9"
+ariadne = "^0.23.0"
 python-decouple = "^3.8"
+jupyter = "^1.0.0"
+tensorflow = "^2.16.1"
+
 
 [build-system]
 requires = ["poetry-core"]
