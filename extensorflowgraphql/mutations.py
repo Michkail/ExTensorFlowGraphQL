@@ -3,19 +3,19 @@ from datetime import datetime
 from ariadne import convert_kwargs_to_snake_case
 
 from .application import db
-from models.sample_model import Todo
+from models.sample_model import SCM
 
 
 @convert_kwargs_to_snake_case
-def resolve_create_todo(obj, info, description, due_date):
+def resolve_create_scm(obj, info, description, due_date):
     try:
         due_date = datetime.strptime(due_date, '%d-%m-%Y').date()
-        todo = Todo(id=2, completed=False, description=description, due_date=due_date)
+        scm = SCM(id=2, completed=False, description=description, due_date=due_date)
 
-        db.session.add(todo)
+        db.session.add(scm)
         db.session.commit()
 
-        payload = {"success": True, "todo": todo.to_dict()}
+        payload = {"success": True, "scm": scm.to_dict()}
 
     except ValueError:
         payload = {"success": False,

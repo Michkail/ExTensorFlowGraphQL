@@ -10,4 +10,4 @@ db = SQLAlchemy(app)
 
 @app.route('/')
 def hello():
-    return 'Hello!'
+    return 'test'

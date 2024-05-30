@@ -1,8 +1,10 @@
+import uuid
+
 from main import db
 
 
-class Todo(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+class SCM(db.Model):
+    id = db.Column(db.String(36), default=lambda: str(uuid.uuid4()), primary_key=True, unique=True)
     description = db.Column(db.String)
     completed = db.Column(db.Boolean, default=False)
     due_date = db.Column(db.Date)
